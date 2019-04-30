@@ -1,0 +1,68 @@
+<custom-style>
+    <style>
+       .menu {
+            background-color: #efb64b;
+            width: 200px;
+        }
+
+        .block {
+            flex: 1 1 25%;
+            min-width:200px;
+        }
+        .block.double {
+            flex: 1 1 50%;
+            min-width:400px;
+        }
+        .block.yellow {
+            background-color: yellow;
+        }
+        .block.blue {
+            background-color: blue;
+        }
+        .block.red {
+            background-color: red;
+        }
+        .block.green {
+            background-color: green;
+        }
+        .block.black {
+            background-color: black;
+        }
+        .block.gray {
+            background-color: gray;
+        }
+        
+        .responsivelayout{
+            flex-wrap: wrap;
+            align-content: flex-start;
+        }
+        
+        @media screen and (max-width:625px){
+            .root-layout .menu{
+                width: 80px;
+            }
+        }
+        
+        @media screen and (max-width:1050px){
+            .responsivelayout .block{
+                flex: 1 1 50%;
+            }
+            .responsivelayout .block.double{
+                min-width: initial;
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</custom-style>
+
+<dom-module id="icon-only-button" theme-for="vaadin-button">
+    <template>
+        <style>
+            @media screen and (max-width:625px){
+                :host(vaadin-button.linkbtn) [part="label"]{
+                    display: none;
+                }
+            }
+        </style>
+    </template>
+</dom-module>
